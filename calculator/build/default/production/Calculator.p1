@@ -1,0 +1,1282 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F3445 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF3445 ~T0 @X0 0 e ]
+[p i __delay ]
+"66 ./ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h
+[s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S273 . port pin direction logic ]
+"24 ./ECU_Layer/keypad/ecu_keypad.h
+[; ;./ECU_Layer/keypad/ecu_keypad.h: 24: typedef struct{
+[s S279 `S273 -> 4 `i `S273 -> 10 `i ]
+[n S279 . keypad_row_pins keypad_columns_pins ]
+"33
+[; ;./ECU_Layer/keypad/ecu_keypad.h: 33: Std_ReturnType keypad_get_value(const keypad_t *_keypad_obj, uint8 *value);
+[v _keypad_get_value `(uc ~T0 @X0 0 ef2`*CS279`*uc ]
+"28 ./Calculator.h
+[; ;./Calculator.h: 28:     extern keypad_t kyp;
+[v _kyp `S279 ~T0 @X0 0 e ]
+"19 ./ECU_Layer/../services/Stack/stack.h
+[; ;./ECU_Layer/../services/Stack/stack.h: 19: typedef struct{
+[s S282 `c 1 `uc -> 100 `i ]
+[n S282 . top entry ]
+"32
+[; ;./ECU_Layer/../services/Stack/stack.h: 32: Std_ReturnType push_stack_char(stack_char_t *ps, sint8 value);
+[v _push_stack_char `(uc ~T0 @X0 0 ef2`*S282`c ]
+"30 ./Calculator.h
+[; ;./Calculator.h: 30:     extern stack_char_t stack_char;
+[v _stack_char `S282 ~T0 @X0 0 e ]
+"34 ./ECU_Layer/../services/Stack/stack.h
+[; ;./ECU_Layer/../services/Stack/stack.h: 34: Std_ReturnType empty_stack_char(stack_char_t *ps);
+[v _empty_stack_char `(uc ~T0 @X0 0 ef1`*S282 ]
+"33
+[; ;./ECU_Layer/../services/Stack/stack.h: 33: Std_ReturnType pop_stack_char(stack_char_t *ps, sint8 *value);
+[v _pop_stack_char `(uc ~T0 @X0 0 ef2`*S282`*c ]
+"36
+[; ;./ECU_Layer/../services/Stack/stack.h: 36: Std_ReturnType top_stack_char(stack_char_t *ps, sint8 *value);
+[v _top_stack_char `(uc ~T0 @X0 0 ef2`*S282`*c ]
+"24
+[; ;./ECU_Layer/../services/Stack/stack.h: 24: typedef struct{
+[s S283 `c 1 `f -> 100 `i ]
+[n S283 . Top Entry ]
+"41
+[; ;./ECU_Layer/../services/Stack/stack.h: 41: Std_ReturnType push_stack_float(stack_float_t *ps, float value);
+[v _push_stack_float `(uc ~T0 @X0 0 ef2`*S283`f ]
+"31 ./Calculator.h
+[; ;./Calculator.h: 31:     extern stack_float_t stack_evaulate;
+[v _stack_evaulate `S283 ~T0 @X0 0 e ]
+"42 ./ECU_Layer/../services/Stack/stack.h
+[; ;./ECU_Layer/../services/Stack/stack.h: 42: Std_ReturnType pop_stack_float(stack_float_t *ps, float *value);
+[v _pop_stack_float `(uc ~T0 @X0 0 ef2`*S283`*f ]
+"369 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 369: float sinf(float);
+[v _sinf `(f ~T0 @X0 0 ef1`f ]
+"120
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 120: float cosf(float);
+[v _cosf `(f ~T0 @X0 0 ef1`f ]
+"387
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 387: float tanf(float);
+[v _tanf `(f ~T0 @X0 0 ef1`f ]
+"84
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 84: float atanf(float);
+[v _atanf `(f ~T0 @X0 0 ef1`f ]
+"72
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 72: float asinf(float);
+[v _asinf `(f ~T0 @X0 0 ef1`f ]
+"60
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 60: float acosf(float);
+[v _acosf `(f ~T0 @X0 0 ef1`f ]
+"375
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 375: float sinhf(float);
+[v _sinhf `(f ~T0 @X0 0 ef1`f ]
+"126
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 126: float coshf(float);
+[v _coshf `(f ~T0 @X0 0 ef1`f ]
+"393
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 393: float tanhf(float);
+[v _tanhf `(f ~T0 @X0 0 ef1`f ]
+"381
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 381: float sqrtf(float);
+[v _sqrtf `(f ~T0 @X0 0 ef1`f ]
+"102
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 102: float cbrtf(float);
+[v _cbrtf `(f ~T0 @X0 0 ef1`f ]
+"249
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 249: float logf(float);
+[v _logf `(f ~T0 @X0 0 ef1`f ]
+"198
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 198: float fmodf(float, float);
+[v _fmodf `(f ~T0 @X0 0 ef2`f`f ]
+[v F3322 `(f ~T0 @X0 1 tf2`f`f ]
+"327
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 327: __attribute__((nonreentrant)) float powf(float, float);
+[v _powf `JF3322 ~T0 @X0 0 e ]
+"43 ./ECU_Layer/../services/Stack/stack.h
+[; ;./ECU_Layer/../services/Stack/stack.h: 43: Std_ReturnType empty_stack_float(stack_float_t *ps);
+[v _empty_stack_float `(uc ~T0 @X0 0 ef1`*S283 ]
+"32 ./Calculator.h
+[; ;./Calculator.h: 32:     extern stack_char_t stack_balanced;
+[v _stack_balanced `S282 ~T0 @X0 0 e ]
+"54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
+[; <" PORTA equ 0F80h ;# ">
+"191
+[; <" PORTB equ 0F81h ;# ">
+"362
+[; <" PORTC equ 0F82h ;# ">
+"537
+[; <" PORTD equ 0F83h ;# ">
+"679
+[; <" PORTE equ 0F84h ;# ">
+"882
+[; <" LATA equ 0F89h ;# ">
+"994
+[; <" LATB equ 0F8Ah ;# ">
+"1106
+[; <" LATC equ 0F8Bh ;# ">
+"1218
+[; <" LATD equ 0F8Ch ;# ">
+"1330
+[; <" LATE equ 0F8Dh ;# ">
+"1382
+[; <" TRISA equ 0F92h ;# ">
+"1387
+[; <" DDRA equ 0F92h ;# ">
+"1604
+[; <" TRISB equ 0F93h ;# ">
+"1609
+[; <" DDRB equ 0F93h ;# ">
+"1826
+[; <" TRISC equ 0F94h ;# ">
+"1831
+[; <" DDRC equ 0F94h ;# ">
+"2048
+[; <" TRISD equ 0F95h ;# ">
+"2053
+[; <" DDRD equ 0F95h ;# ">
+"2270
+[; <" TRISE equ 0F96h ;# ">
+"2275
+[; <" DDRE equ 0F96h ;# ">
+"2434
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2499
+[; <" PIE1 equ 0F9Dh ;# ">
+"2576
+[; <" PIR1 equ 0F9Eh ;# ">
+"2653
+[; <" IPR1 equ 0F9Fh ;# ">
+"2730
+[; <" PIE2 equ 0FA0h ;# ">
+"2796
+[; <" PIR2 equ 0FA1h ;# ">
+"2862
+[; <" IPR2 equ 0FA2h ;# ">
+"2928
+[; <" EECON1 equ 0FA6h ;# ">
+"2994
+[; <" EECON2 equ 0FA7h ;# ">
+"3001
+[; <" EEDATA equ 0FA8h ;# ">
+"3008
+[; <" EEADR equ 0FA9h ;# ">
+"3015
+[; <" EEADRH equ 0FAAh ;# ">
+"3022
+[; <" RCSTA equ 0FABh ;# ">
+"3027
+[; <" RCSTA1 equ 0FABh ;# ">
+"3232
+[; <" TXSTA equ 0FACh ;# ">
+"3237
+[; <" TXSTA1 equ 0FACh ;# ">
+"3488
+[; <" TXREG equ 0FADh ;# ">
+"3493
+[; <" TXREG1 equ 0FADh ;# ">
+"3500
+[; <" RCREG equ 0FAEh ;# ">
+"3505
+[; <" RCREG1 equ 0FAEh ;# ">
+"3512
+[; <" SPBRG equ 0FAFh ;# ">
+"3517
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3524
+[; <" SPBRGH equ 0FB0h ;# ">
+"3531
+[; <" T3CON equ 0FB1h ;# ">
+"3643
+[; <" TMR3 equ 0FB2h ;# ">
+"3650
+[; <" TMR3L equ 0FB2h ;# ">
+"3657
+[; <" TMR3H equ 0FB3h ;# ">
+"3664
+[; <" CMCON equ 0FB4h ;# ">
+"3754
+[; <" CVRCON equ 0FB5h ;# ">
+"3833
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3915
+[; <" PWM1CON equ 0FB7h ;# ">
+"3985
+[; <" BAUDCON equ 0FB8h ;# ">
+"3990
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4157
+[; <" CCP2CON equ 0FBAh ;# ">
+"4236
+[; <" CCPR2 equ 0FBBh ;# ">
+"4243
+[; <" CCPR2L equ 0FBBh ;# ">
+"4250
+[; <" CCPR2H equ 0FBCh ;# ">
+"4257
+[; <" CCP1CON equ 0FBDh ;# ">
+"4354
+[; <" CCPR1 equ 0FBEh ;# ">
+"4361
+[; <" CCPR1L equ 0FBEh ;# ">
+"4368
+[; <" CCPR1H equ 0FBFh ;# ">
+"4375
+[; <" ADCON2 equ 0FC0h ;# ">
+"4446
+[; <" ADCON1 equ 0FC1h ;# ">
+"4531
+[; <" ADCON0 equ 0FC2h ;# ">
+"4650
+[; <" ADRES equ 0FC3h ;# ">
+"4657
+[; <" ADRESL equ 0FC3h ;# ">
+"4664
+[; <" ADRESH equ 0FC4h ;# ">
+"4671
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4733
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4803
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5024
+[; <" SSPADD equ 0FC8h ;# ">
+"5031
+[; <" SSPBUF equ 0FC9h ;# ">
+"5038
+[; <" T2CON equ 0FCAh ;# ">
+"5109
+[; <" PR2 equ 0FCBh ;# ">
+"5114
+[; <" MEMCON equ 0FCBh ;# ">
+"5219
+[; <" TMR2 equ 0FCCh ;# ">
+"5226
+[; <" T1CON equ 0FCDh ;# ">
+"5329
+[; <" TMR1 equ 0FCEh ;# ">
+"5336
+[; <" TMR1L equ 0FCEh ;# ">
+"5343
+[; <" TMR1H equ 0FCFh ;# ">
+"5350
+[; <" RCON equ 0FD0h ;# ">
+"5483
+[; <" WDTCON equ 0FD1h ;# ">
+"5511
+[; <" HLVDCON equ 0FD2h ;# ">
+"5516
+[; <" LVDCON equ 0FD2h ;# ">
+"5781
+[; <" OSCCON equ 0FD3h ;# ">
+"5858
+[; <" T0CON equ 0FD5h ;# ">
+"5935
+[; <" TMR0 equ 0FD6h ;# ">
+"5942
+[; <" TMR0L equ 0FD6h ;# ">
+"5949
+[; <" TMR0H equ 0FD7h ;# ">
+"5956
+[; <" STATUS equ 0FD8h ;# ">
+"6027
+[; <" FSR2 equ 0FD9h ;# ">
+"6034
+[; <" FSR2L equ 0FD9h ;# ">
+"6041
+[; <" FSR2H equ 0FDAh ;# ">
+"6048
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6055
+[; <" PREINC2 equ 0FDCh ;# ">
+"6062
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6069
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6076
+[; <" INDF2 equ 0FDFh ;# ">
+"6083
+[; <" BSR equ 0FE0h ;# ">
+"6090
+[; <" FSR1 equ 0FE1h ;# ">
+"6097
+[; <" FSR1L equ 0FE1h ;# ">
+"6104
+[; <" FSR1H equ 0FE2h ;# ">
+"6111
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6118
+[; <" PREINC1 equ 0FE4h ;# ">
+"6125
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6132
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6139
+[; <" INDF1 equ 0FE7h ;# ">
+"6146
+[; <" WREG equ 0FE8h ;# ">
+"6158
+[; <" FSR0 equ 0FE9h ;# ">
+"6165
+[; <" FSR0L equ 0FE9h ;# ">
+"6172
+[; <" FSR0H equ 0FEAh ;# ">
+"6179
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6186
+[; <" PREINC0 equ 0FECh ;# ">
+"6193
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6200
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6207
+[; <" INDF0 equ 0FEFh ;# ">
+"6214
+[; <" INTCON3 equ 0FF0h ;# ">
+"6306
+[; <" INTCON2 equ 0FF1h ;# ">
+"6376
+[; <" INTCON equ 0FF2h ;# ">
+"6493
+[; <" PROD equ 0FF3h ;# ">
+"6500
+[; <" PRODL equ 0FF3h ;# ">
+"6507
+[; <" PRODH equ 0FF4h ;# ">
+"6514
+[; <" TABLAT equ 0FF5h ;# ">
+"6523
+[; <" TBLPTR equ 0FF6h ;# ">
+"6530
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6537
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6544
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6553
+[; <" PCLAT equ 0FF9h ;# ">
+"6560
+[; <" PC equ 0FF9h ;# ">
+"6567
+[; <" PCL equ 0FF9h ;# ">
+"6574
+[; <" PCLATH equ 0FFAh ;# ">
+"6581
+[; <" PCLATU equ 0FFBh ;# ">
+"6588
+[; <" STKPTR equ 0FFCh ;# ">
+"6694
+[; <" TOS equ 0FFDh ;# ">
+"6701
+[; <" TOSL equ 0FFDh ;# ">
+"6708
+[; <" TOSH equ 0FFEh ;# ">
+"6715
+[; <" TOSU equ 0FFFh ;# ">
+"9 Calculator.c
+[; ;Calculator.c: 9: uint8 keypad_read_value() {
+[v _keypad_read_value `(uc ~T0 @X0 1 ef ]
+{
+[e :U _keypad_read_value ]
+[f ]
+"10
+[; ;Calculator.c: 10:     Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"11
+[; ;Calculator.c: 11:     uint8 keypad_pressed_value = 0;
+[v _keypad_pressed_value `uc ~T0 @X0 1 a ]
+[e = _keypad_pressed_value -> -> 0 `i `uc ]
+"12
+[; ;Calculator.c: 12:     do {
+[e :U 287 ]
+{
+"13
+[; ;Calculator.c: 13:         _delay((unsigned long)((20)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"14
+[; ;Calculator.c: 14:         ret = keypad_get_value(&kyp, &keypad_pressed_value);
+[e = _ret ( _keypad_get_value (2 , -> &U _kyp `*CS279 &U _keypad_pressed_value ]
+"15
+[; ;Calculator.c: 15:     } while (0 == keypad_pressed_value);
+}
+[e $ == -> 0 `i -> _keypad_pressed_value `i 287  ]
+[e :U 286 ]
+"16
+[; ;Calculator.c: 16:     _delay((unsigned long)((20)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"17
+[; ;Calculator.c: 17:     return keypad_pressed_value;
+[e ) _keypad_pressed_value ]
+[e $UE 284  ]
+"18
+[; ;Calculator.c: 18: }
+[e :UE 284 ]
+}
+"22
+[; ;Calculator.c: 22: sint8 precedence(uint8 op) {
+[v _precedence `(c ~T0 @X0 1 ef1`uc ]
+{
+[e :U _precedence ]
+[v _op `uc ~T0 @X0 1 r1 ]
+[f ]
+"23
+[; ;Calculator.c: 23:     if (op == 'E' || op == 'R' || op == 'T'
+[e $ ! || || || || || || || || || || || || == -> _op `ui -> 69 `ui == -> _op `ui -> 82 `ui == -> _op `ui -> 84 `ui == -> _op `ui -> 80 `ui == -> _op `ui -> 75 `ui == -> _op `ui -> 89 `ui == -> _op `ui -> 85 `ui == -> _op `ui -> 73 `ui == -> _op `ui -> 64 `ui == -> _op `ui -> 65 `ui == -> _op `ui -> 83 `ui == -> _op `ui -> 68 `ui == -> _op `ui -> 87 `ui 289  ]
+"27
+[; ;Calculator.c: 27:      || op == 'W') return 4;
+[e ) -> -> 4 `i `c ]
+[e $UE 288  ]
+[e :U 289 ]
+"28
+[; ;Calculator.c: 28:     if (op == '^') return 3;
+[e $ ! == -> _op `ui -> 94 `ui 290  ]
+[e ) -> -> 3 `i `c ]
+[e $UE 288  ]
+[e :U 290 ]
+"29
+[; ;Calculator.c: 29:     if (op == '*' || op == '/' || op == '%') return 2;
+[e $ ! || || == -> _op `ui -> 42 `ui == -> _op `ui -> 47 `ui == -> _op `ui -> 37 `ui 291  ]
+[e ) -> -> 2 `i `c ]
+[e $UE 288  ]
+[e :U 291 ]
+"30
+[; ;Calculator.c: 30:     if (op == '+' || op == '-' || op == '_') return 1;
+[e $ ! || || == -> _op `ui -> 43 `ui == -> _op `ui -> 45 `ui == -> _op `ui -> 95 `ui 292  ]
+[e ) -> -> 1 `i `c ]
+[e $UE 288  ]
+[e :U 292 ]
+"31
+[; ;Calculator.c: 31:     return 0;
+[e ) -> -> 0 `i `c ]
+[e $UE 288  ]
+"32
+[; ;Calculator.c: 32: }
+[e :UE 288 ]
+}
+"34
+[; ;Calculator.c: 34: void infix_to_postfix(uint8 *infix, uint8 *postfix){
+[v _infix_to_postfix `(v ~T0 @X0 1 ef2`*uc`*uc ]
+{
+[e :U _infix_to_postfix ]
+[v _infix `*uc ~T0 @X0 1 r1 ]
+[v _postfix `*uc ~T0 @X0 1 r2 ]
+[f ]
+"35
+[; ;Calculator.c: 35:     uint8 l_counter = 0;
+[v _l_counter `uc ~T0 @X0 1 a ]
+[e = _l_counter -> -> 0 `i `uc ]
+"36
+[; ;Calculator.c: 36:     uint8 index_postfix = 0;
+[v _index_postfix `uc ~T0 @X0 1 a ]
+[e = _index_postfix -> -> 0 `i `uc ]
+"37
+[; ;Calculator.c: 37:     sint8 previous_operator = 1;
+[v _previous_operator `c ~T0 @X0 1 a ]
+[e = _previous_operator -> -> 1 `i `c ]
+"39
+[; ;Calculator.c: 39:     for(l_counter = 0 ; infix[l_counter] != '\0' ; l_counter++){
+{
+[e = _l_counter -> -> 0 `i `uc ]
+[e $U 297  ]
+[e :U 294 ]
+{
+"40
+[; ;Calculator.c: 40:         uint8 variable = infix[l_counter];
+[v _variable `uc ~T0 @X0 1 a ]
+[e = _variable *U + _infix * -> _l_counter `ux -> -> # *U _infix `ui `ux ]
+"42
+[; ;Calculator.c: 42:        if((((unsigned char)((variable)-'0')) < 10) || variable == ' ' || variable == '.'){
+[e $ ! || || < -> -> - -> _variable `ui -> 48 `ui `uc `i -> 10 `i == -> _variable `ui -> 32 `ui == -> _variable `ui -> 46 `ui 298  ]
+{
+"43
+[; ;Calculator.c: 43:             postfix[index_postfix++] = variable;
+[e = *U + _postfix * -> ++ _index_postfix -> -> 1 `i `uc `ux -> -> # *U _postfix `ui `ux _variable ]
+"44
+[; ;Calculator.c: 44:              previous_operator = 0;
+[e = _previous_operator -> -> 0 `i `c ]
+"45
+[; ;Calculator.c: 45:         }
+}
+[e $U 299  ]
+"46
+[; ;Calculator.c: 46:         else if(variable == '-' && (l_counter == 0 || infix[l_counter - 1] == '(' || previous_operator)){
+[e :U 298 ]
+[e $ ! && == -> _variable `ui -> 45 `ui || || == -> _l_counter `i -> 0 `i == -> *U + _infix * -> - -> _l_counter `i -> 1 `i `x -> -> # *U _infix `i `x `ui -> 40 `ui != -> _previous_operator `i -> 0 `i 300  ]
+{
+"47
+[; ;Calculator.c: 47:             postfix[index_postfix++] = variable;
+[e = *U + _postfix * -> ++ _index_postfix -> -> 1 `i `uc `ux -> -> # *U _postfix `ui `ux _variable ]
+"48
+[; ;Calculator.c: 48:             previous_operator = 0;
+[e = _previous_operator -> -> 0 `i `c ]
+"49
+[; ;Calculator.c: 49:         }
+}
+[e $U 301  ]
+"51
+[; ;Calculator.c: 51:         else if('(' == variable){
+[e :U 300 ]
+[e $ ! == -> 40 `ui -> _variable `ui 302  ]
+{
+"52
+[; ;Calculator.c: 52:             push_stack_char(&stack_char, variable);
+[e ( _push_stack_char (2 , &U _stack_char -> _variable `c ]
+"53
+[; ;Calculator.c: 53:         }
+}
+[e $U 303  ]
+"54
+[; ;Calculator.c: 54:         else if (')' == variable) {
+[e :U 302 ]
+[e $ ! == -> 41 `ui -> _variable `ui 304  ]
+{
+"55
+[; ;Calculator.c: 55:             uint8 _top;
+[v __top `uc ~T0 @X0 1 a ]
+"56
+[; ;Calculator.c: 56:             if (!empty_stack_char(&stack_char)) {
+[e $ ! ! != -> ( _empty_stack_char (1 &U _stack_char `i -> 0 `i 305  ]
+{
+"57
+[; ;Calculator.c: 57:                 do {
+[e :U 308 ]
+{
+"58
+[; ;Calculator.c: 58:                     pop_stack_char(&stack_char, &_top);
+[e ( _pop_stack_char (2 , &U _stack_char -> &U __top `*c ]
+"59
+[; ;Calculator.c: 59:                     if (_top != '(') {
+[e $ ! != -> __top `ui -> 40 `ui 309  ]
+{
+"60
+[; ;Calculator.c: 60:                         postfix[index_postfix++] = _top;
+[e = *U + _postfix * -> ++ _index_postfix -> -> 1 `i `uc `ux -> -> # *U _postfix `ui `ux __top ]
+"61
+[; ;Calculator.c: 61:                     }
+}
+[e :U 309 ]
+"62
+[; ;Calculator.c: 62:                 } while (!empty_stack_char(&stack_char) && _top != '(');
+}
+[e $ && ! != -> ( _empty_stack_char (1 &U _stack_char `i -> 0 `i != -> __top `ui -> 40 `ui 308  ]
+[e :U 307 ]
+"63
+[; ;Calculator.c: 63:             }
+}
+[e :U 305 ]
+"64
+[; ;Calculator.c: 64:         }
+}
+[e $U 310  ]
+"65
+[; ;Calculator.c: 65:        else {
+[e :U 304 ]
+{
+"66
+[; ;Calculator.c: 66:             uint8 _top;
+[v __top `uc ~T0 @X0 1 a ]
+"67
+[; ;Calculator.c: 67:             while (!empty_stack_char(&stack_char)) {
+[e $U 311  ]
+[e :U 312 ]
+{
+"68
+[; ;Calculator.c: 68:                 top_stack_char(&stack_char, &_top);
+[e ( _top_stack_char (2 , &U _stack_char -> &U __top `*c ]
+"69
+[; ;Calculator.c: 69:                 if (precedence(_top) >= precedence(variable)) {
+[e $ ! >= -> ( _precedence (1 __top `i -> ( _precedence (1 _variable `i 314  ]
+{
+"70
+[; ;Calculator.c: 70:                     pop_stack_char(&stack_char, &_top);
+[e ( _pop_stack_char (2 , &U _stack_char -> &U __top `*c ]
+"71
+[; ;Calculator.c: 71:                     postfix[index_postfix++] = _top;
+[e = *U + _postfix * -> ++ _index_postfix -> -> 1 `i `uc `ux -> -> # *U _postfix `ui `ux __top ]
+"72
+[; ;Calculator.c: 72:                 } else {
+}
+[e $U 315  ]
+[e :U 314 ]
+{
+"73
+[; ;Calculator.c: 73:                     break;
+[e $U 313  ]
+"74
+[; ;Calculator.c: 74:                 }
+}
+[e :U 315 ]
+"75
+[; ;Calculator.c: 75:             }
+}
+[e :U 311 ]
+"67
+[; ;Calculator.c: 67:             while (!empty_stack_char(&stack_char)) {
+[e $ ! != -> ( _empty_stack_char (1 &U _stack_char `i -> 0 `i 312  ]
+[e :U 313 ]
+"76
+[; ;Calculator.c: 76:             push_stack_char(&stack_char, variable);
+[e ( _push_stack_char (2 , &U _stack_char -> _variable `c ]
+"77
+[; ;Calculator.c: 77:              previous_operator = 1;
+[e = _previous_operator -> -> 1 `i `c ]
+"78
+[; ;Calculator.c: 78:         }
+}
+[e :U 310 ]
+[e :U 303 ]
+[e :U 301 ]
+[e :U 299 ]
+"79
+[; ;Calculator.c: 79:     }
+}
+[e ++ _l_counter -> -> 1 `i `uc ]
+[e :U 297 ]
+[e $ != -> *U + _infix * -> _l_counter `ux -> -> # *U _infix `ui `ux `ui -> 0 `ui 294  ]
+[e :U 295 ]
+}
+"81
+[; ;Calculator.c: 81:             uint8 top_token;
+[v _top_token `uc ~T0 @X0 1 a ]
+"82
+[; ;Calculator.c: 82:             while (!empty_stack_char(&stack_char)) {
+[e $U 316  ]
+[e :U 317 ]
+{
+"83
+[; ;Calculator.c: 83:             pop_stack_char(&stack_char, &top_token);
+[e ( _pop_stack_char (2 , &U _stack_char -> &U _top_token `*c ]
+"84
+[; ;Calculator.c: 84:             postfix[index_postfix++] = top_token;
+[e = *U + _postfix * -> ++ _index_postfix -> -> 1 `i `uc `ux -> -> # *U _postfix `ui `ux _top_token ]
+"85
+[; ;Calculator.c: 85:     }
+}
+[e :U 316 ]
+"82
+[; ;Calculator.c: 82:             while (!empty_stack_char(&stack_char)) {
+[e $ ! != -> ( _empty_stack_char (1 &U _stack_char `i -> 0 `i 317  ]
+[e :U 318 ]
+"86
+[; ;Calculator.c: 86:     postfix[index_postfix] = '\0';
+[e = *U + _postfix * -> _index_postfix `ux -> -> # *U _postfix `ui `ux -> -> 0 `ui `uc ]
+"87
+[; ;Calculator.c: 87: }
+[e :UE 293 ]
+}
+"89
+[; ;Calculator.c: 89: void evaluate_postfix(uint8 *postfix, float *result) {
+[v _evaluate_postfix `(v ~T0 @X0 1 ef2`*uc`*f ]
+{
+[e :U _evaluate_postfix ]
+[v _postfix `*uc ~T0 @X0 1 r1 ]
+[v _result `*f ~T0 @X0 1 r2 ]
+[f ]
+"90
+[; ;Calculator.c: 90:     uint8 l_counter = 0;
+[v _l_counter `uc ~T0 @X0 1 a ]
+[e = _l_counter -> -> 0 `i `uc ]
+"91
+[; ;Calculator.c: 91:     float operand1 = 0, operand2 = 0, eval_result = 0;
+[v _operand1 `f ~T0 @X0 1 a ]
+[e = _operand1 -> -> 0 `i `f ]
+[v _operand2 `f ~T0 @X0 1 a ]
+[e = _operand2 -> -> 0 `i `f ]
+[v _eval_result `f ~T0 @X0 1 a ]
+[e = _eval_result -> -> 0 `i `f ]
+"92
+[; ;Calculator.c: 92:     float temp_num = 0;
+[v _temp_num `f ~T0 @X0 1 a ]
+[e = _temp_num -> -> 0 `i `f ]
+"93
+[; ;Calculator.c: 93:     sint8 number_found = 0;
+[v _number_found `c ~T0 @X0 1 a ]
+[e = _number_found -> -> 0 `i `c ]
+"94
+[; ;Calculator.c: 94:     sint8 is_negative = 0;
+[v _is_negative `c ~T0 @X0 1 a ]
+[e = _is_negative -> -> 0 `i `c ]
+"95
+[; ;Calculator.c: 95:     float fractional_part = 0;
+[v _fractional_part `f ~T0 @X0 1 a ]
+[e = _fractional_part -> -> 0 `i `f ]
+"96
+[; ;Calculator.c: 96:     sint8 divisor = 1;
+[v _divisor `c ~T0 @X0 1 a ]
+[e = _divisor -> -> 1 `i `c ]
+"98
+[; ;Calculator.c: 98:     for (l_counter = 0; postfix[l_counter] != '\0'; l_counter++) {
+{
+[e = _l_counter -> -> 0 `i `uc ]
+[e $U 323  ]
+[e :U 320 ]
+{
+"99
+[; ;Calculator.c: 99:         uint8 variable = postfix[l_counter];
+[v _variable `uc ~T0 @X0 1 a ]
+[e = _variable *U + _postfix * -> _l_counter `ux -> -> # *U _postfix `ui `ux ]
+"102
+[; ;Calculator.c: 102:         if (variable == '-' && !number_found && (l_counter == 0 || postfix[l_counter - 1] == ' ')) {
+[e $ ! && && == -> _variable `ui -> 45 `ui ! != -> _number_found `i -> 0 `i || == -> _l_counter `i -> 0 `i == -> *U + _postfix * -> - -> _l_counter `i -> 1 `i `x -> -> # *U _postfix `i `x `ui -> 32 `ui 324  ]
+{
+"103
+[; ;Calculator.c: 103:             is_negative = 1;
+[e = _is_negative -> -> 1 `i `c ]
+"104
+[; ;Calculator.c: 104:         }
+}
+[e $U 325  ]
+"106
+[; ;Calculator.c: 106:         else if ((((unsigned char)((variable)-'0')) < 10) || variable == '.') {
+[e :U 324 ]
+[e $ ! || < -> -> - -> _variable `ui -> 48 `ui `uc `i -> 10 `i == -> _variable `ui -> 46 `ui 326  ]
+{
+"107
+[; ;Calculator.c: 107:             if (variable == '.') {
+[e $ ! == -> _variable `ui -> 46 `ui 327  ]
+{
+"108
+[; ;Calculator.c: 108:                 fractional_part = 0;
+[e = _fractional_part -> -> 0 `i `f ]
+"109
+[; ;Calculator.c: 109:                 divisor = 10;
+[e = _divisor -> -> 10 `i `c ]
+"110
+[; ;Calculator.c: 110:             } else {
+}
+[e $U 328  ]
+[e :U 327 ]
+{
+"111
+[; ;Calculator.c: 111:                 if (divisor == 1) {
+[e $ ! == -> _divisor `i -> 1 `i 329  ]
+{
+"112
+[; ;Calculator.c: 112:                     temp_num = temp_num * 10 + (variable - '0');
+[e = _temp_num + * _temp_num -> -> 10 `i `f -> - -> _variable `ui -> 48 `ui `f ]
+"113
+[; ;Calculator.c: 113:                 } else {
+}
+[e $U 330  ]
+[e :U 329 ]
+{
+"114
+[; ;Calculator.c: 114:                     fractional_part += (float)(variable - '0') / divisor;
+[e =+ _fractional_part / -> - -> _variable `ui -> 48 `ui `f -> -> _divisor `i `f ]
+"115
+[; ;Calculator.c: 115:                     divisor *= 10;
+[e =* _divisor -> -> 10 `i `c ]
+"116
+[; ;Calculator.c: 116:                 }
+}
+[e :U 330 ]
+"117
+[; ;Calculator.c: 117:             }
+}
+[e :U 328 ]
+"118
+[; ;Calculator.c: 118:             number_found = 1;
+[e = _number_found -> -> 1 `i `c ]
+"119
+[; ;Calculator.c: 119:         }
+}
+[e $U 331  ]
+"120
+[; ;Calculator.c: 120:         else if (variable == ' ' && number_found) {
+[e :U 326 ]
+[e $ ! && == -> _variable `ui -> 32 `ui != -> _number_found `i -> 0 `i 332  ]
+{
+"121
+[; ;Calculator.c: 121:             if (is_negative) {
+[e $ ! != -> _is_negative `i -> 0 `i 333  ]
+{
+"122
+[; ;Calculator.c: 122:                 temp_num = -temp_num;
+[e = _temp_num -U _temp_num ]
+"123
+[; ;Calculator.c: 123:                 is_negative = 0;
+[e = _is_negative -> -> 0 `i `c ]
+"124
+[; ;Calculator.c: 124:             }
+}
+[e :U 333 ]
+"126
+[; ;Calculator.c: 126:             temp_num += fractional_part;
+[e =+ _temp_num _fractional_part ]
+"128
+[; ;Calculator.c: 128:             push_stack_float(&stack_evaulate, temp_num);
+[e ( _push_stack_float (2 , &U _stack_evaulate _temp_num ]
+"129
+[; ;Calculator.c: 129:             temp_num = 0;
+[e = _temp_num -> -> 0 `i `f ]
+"130
+[; ;Calculator.c: 130:             number_found = 0;
+[e = _number_found -> -> 0 `i `c ]
+"131
+[; ;Calculator.c: 131:             divisor = 1;
+[e = _divisor -> -> 1 `i `c ]
+"132
+[; ;Calculator.c: 132:             fractional_part = 0;
+[e = _fractional_part -> -> 0 `i `f ]
+"133
+[; ;Calculator.c: 133:         }
+}
+[e $U 334  ]
+"135
+[; ;Calculator.c: 135:         else {
+[e :U 332 ]
+{
+"136
+[; ;Calculator.c: 136:             if('E' == variable){
+[e $ ! == -> 69 `ui -> _variable `ui 335  ]
+{
+"137
+[; ;Calculator.c: 137:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"138
+[; ;Calculator.c: 138:                   eval_result = sinf(operand1 * (3.14159265358979323846 / 180.0));
+[e = _eval_result ( _sinf (1 -> * -> _operand1 `d / .3.14159265358979323846 .180.0 `f ]
+"139
+[; ;Calculator.c: 139:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"140
+[; ;Calculator.c: 140:             }
+}
+[e $U 336  ]
+"141
+[; ;Calculator.c: 141:             else if('R' == variable){
+[e :U 335 ]
+[e $ ! == -> 82 `ui -> _variable `ui 337  ]
+{
+"142
+[; ;Calculator.c: 142:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"143
+[; ;Calculator.c: 143:                   eval_result = cosf(operand1 * (3.14159265358979323846 / 180.0));
+[e = _eval_result ( _cosf (1 -> * -> _operand1 `d / .3.14159265358979323846 .180.0 `f ]
+"144
+[; ;Calculator.c: 144:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"145
+[; ;Calculator.c: 145:             }
+}
+[e $U 338  ]
+"146
+[; ;Calculator.c: 146:             else if('T' == variable){
+[e :U 337 ]
+[e $ ! == -> 84 `ui -> _variable `ui 339  ]
+{
+"147
+[; ;Calculator.c: 147:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"148
+[; ;Calculator.c: 148:                   eval_result = tanf(operand1 * (3.14159265358979323846 / 180.0));
+[e = _eval_result ( _tanf (1 -> * -> _operand1 `d / .3.14159265358979323846 .180.0 `f ]
+"149
+[; ;Calculator.c: 149:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"150
+[; ;Calculator.c: 150:             }
+}
+[e $U 340  ]
+"151
+[; ;Calculator.c: 151:             else if('P' == variable){
+[e :U 339 ]
+[e $ ! == -> 80 `ui -> _variable `ui 341  ]
+{
+"152
+[; ;Calculator.c: 152:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"153
+[; ;Calculator.c: 153:                   eval_result = atanf(operand1);
+[e = _eval_result ( _atanf (1 _operand1 ]
+"154
+[; ;Calculator.c: 154:                   eval_result *= 180.0 / 3.14159265358979323846 ;
+[e =* _eval_result -> / .180.0 .3.14159265358979323846 `f ]
+"155
+[; ;Calculator.c: 155:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"156
+[; ;Calculator.c: 156:             }
+}
+[e $U 342  ]
+"157
+[; ;Calculator.c: 157:             else if('K' == variable){
+[e :U 341 ]
+[e $ ! == -> 75 `ui -> _variable `ui 343  ]
+{
+"158
+[; ;Calculator.c: 158:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"159
+[; ;Calculator.c: 159:                   eval_result = asinf(operand1);
+[e = _eval_result ( _asinf (1 _operand1 ]
+"160
+[; ;Calculator.c: 160:                   eval_result *= 180.0 / 3.14159265358979323846 ;
+[e =* _eval_result -> / .180.0 .3.14159265358979323846 `f ]
+"161
+[; ;Calculator.c: 161:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"162
+[; ;Calculator.c: 162:             }
+}
+[e $U 344  ]
+"163
+[; ;Calculator.c: 163:             else if('A' == variable){
+[e :U 343 ]
+[e $ ! == -> 65 `ui -> _variable `ui 345  ]
+{
+"164
+[; ;Calculator.c: 164:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"165
+[; ;Calculator.c: 165:                   eval_result = acosf(operand1);
+[e = _eval_result ( _acosf (1 _operand1 ]
+"166
+[; ;Calculator.c: 166:                   eval_result *= 180.0 / 3.14159265358979323846 ;
+[e =* _eval_result -> / .180.0 .3.14159265358979323846 `f ]
+"167
+[; ;Calculator.c: 167:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"168
+[; ;Calculator.c: 168:             }
+}
+[e $U 346  ]
+"169
+[; ;Calculator.c: 169:             else if('Y' == variable){
+[e :U 345 ]
+[e $ ! == -> 89 `ui -> _variable `ui 347  ]
+{
+"170
+[; ;Calculator.c: 170:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"171
+[; ;Calculator.c: 171:                   eval_result = sinhf(operand1);
+[e = _eval_result ( _sinhf (1 _operand1 ]
+"172
+[; ;Calculator.c: 172:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"173
+[; ;Calculator.c: 173:             }
+}
+[e $U 348  ]
+"174
+[; ;Calculator.c: 174:             else if('U' == variable){
+[e :U 347 ]
+[e $ ! == -> 85 `ui -> _variable `ui 349  ]
+{
+"175
+[; ;Calculator.c: 175:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"176
+[; ;Calculator.c: 176:                   eval_result = coshf(operand1);
+[e = _eval_result ( _coshf (1 _operand1 ]
+"177
+[; ;Calculator.c: 177:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"178
+[; ;Calculator.c: 178:             }
+}
+[e $U 350  ]
+"179
+[; ;Calculator.c: 179:             else if('I' == variable){
+[e :U 349 ]
+[e $ ! == -> 73 `ui -> _variable `ui 351  ]
+{
+"180
+[; ;Calculator.c: 180:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"181
+[; ;Calculator.c: 181:                   eval_result = tanhf(operand1);
+[e = _eval_result ( _tanhf (1 _operand1 ]
+"182
+[; ;Calculator.c: 182:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"183
+[; ;Calculator.c: 183:             }
+}
+[e $U 352  ]
+"184
+[; ;Calculator.c: 184:             else if('@' == variable){
+[e :U 351 ]
+[e $ ! == -> 64 `ui -> _variable `ui 353  ]
+{
+"185
+[; ;Calculator.c: 185:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"186
+[; ;Calculator.c: 186:                   eval_result = sqrtf(operand1);
+[e = _eval_result ( _sqrtf (1 _operand1 ]
+"187
+[; ;Calculator.c: 187:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"188
+[; ;Calculator.c: 188:             }
+}
+[e $U 354  ]
+"189
+[; ;Calculator.c: 189:             else if('S' == variable){
+[e :U 353 ]
+[e $ ! == -> 83 `ui -> _variable `ui 355  ]
+{
+"190
+[; ;Calculator.c: 190:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"191
+[; ;Calculator.c: 191:                   eval_result = cbrtf(operand1);
+[e = _eval_result ( _cbrtf (1 _operand1 ]
+"192
+[; ;Calculator.c: 192:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"193
+[; ;Calculator.c: 193:             }
+}
+[e $U 356  ]
+"194
+[; ;Calculator.c: 194:             else if('D' == variable){
+[e :U 355 ]
+[e $ ! == -> 68 `ui -> _variable `ui 357  ]
+{
+"195
+[; ;Calculator.c: 195:                   pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"196
+[; ;Calculator.c: 196:                   eval_result = logf(operand1);
+[e = _eval_result ( _logf (1 _operand1 ]
+"197
+[; ;Calculator.c: 197:                   push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"198
+[; ;Calculator.c: 198:             }
+}
+[e $U 358  ]
+"199
+[; ;Calculator.c: 199:             else{
+[e :U 357 ]
+{
+"200
+[; ;Calculator.c: 200:             pop_stack_float(&stack_evaulate, &operand2);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand2 ]
+"201
+[; ;Calculator.c: 201:             pop_stack_float(&stack_evaulate, &operand1);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _operand1 ]
+"203
+[; ;Calculator.c: 203:             switch (variable) {
+[e $U 360  ]
+{
+"204
+[; ;Calculator.c: 204:                 case '+': eval_result = operand1 + operand2; break;
+[e :U 361 ]
+[e = _eval_result + _operand1 _operand2 ]
+[e $U 359  ]
+"205
+[; ;Calculator.c: 205:                 case '_': eval_result = operand1 - operand2; break;
+[e :U 362 ]
+[e = _eval_result - _operand1 _operand2 ]
+[e $U 359  ]
+"206
+[; ;Calculator.c: 206:                 case '%': eval_result = fmodf(operand1,operand2); break;
+[e :U 363 ]
+[e = _eval_result ( _fmodf (2 , _operand1 _operand2 ]
+[e $U 359  ]
+"207
+[; ;Calculator.c: 207:                 case '*': eval_result = operand1 * operand2; break;
+[e :U 364 ]
+[e = _eval_result * _operand1 _operand2 ]
+[e $U 359  ]
+"208
+[; ;Calculator.c: 208:                 case '/':
+[e :U 365 ]
+"209
+[; ;Calculator.c: 209:                     if (operand2 == 0) {
+[e $ ! == _operand2 -> -> 0 `i `f 366  ]
+{
+"210
+[; ;Calculator.c: 210:                         *result = -1;
+[e = *U _result -> -U -> 1 `i `f ]
+"211
+[; ;Calculator.c: 211:                         return;
+[e $UE 319  ]
+"212
+[; ;Calculator.c: 212:                     }
+}
+[e :U 366 ]
+"213
+[; ;Calculator.c: 213:                     eval_result = operand1 / operand2;
+[e = _eval_result / _operand1 _operand2 ]
+"214
+[; ;Calculator.c: 214:                     break;
+[e $U 359  ]
+"216
+[; ;Calculator.c: 216:                 case '^':
+[e :U 367 ]
+"217
+[; ;Calculator.c: 217:                     eval_result = powf(operand1,operand2);
+[e = _eval_result ( _powf (2 , _operand1 _operand2 ]
+"218
+[; ;Calculator.c: 218:                     break;
+[e $U 359  ]
+"220
+[; ;Calculator.c: 220:                 default:
+[e :U 368 ]
+"221
+[; ;Calculator.c: 221:                     *result = -1;
+[e = *U _result -> -U -> 1 `i `f ]
+"222
+[; ;Calculator.c: 222:                     return;
+[e $UE 319  ]
+"223
+[; ;Calculator.c: 223:             }
+}
+[e $U 359  ]
+[e :U 360 ]
+[e [\ _variable , $ -> -> 43 `ui `i 361
+ , $ -> -> 95 `ui `i 362
+ , $ -> -> 37 `ui `i 363
+ , $ -> -> 42 `ui `i 364
+ , $ -> -> 47 `ui `i 365
+ , $ -> -> 94 `ui `i 367
+ 368 ]
+[e :U 359 ]
+"225
+[; ;Calculator.c: 225:             push_stack_float(&stack_evaulate, eval_result);
+[e ( _push_stack_float (2 , &U _stack_evaulate _eval_result ]
+"226
+[; ;Calculator.c: 226:         }
+}
+[e :U 358 ]
+[e :U 356 ]
+[e :U 354 ]
+[e :U 352 ]
+[e :U 350 ]
+[e :U 348 ]
+[e :U 346 ]
+[e :U 344 ]
+[e :U 342 ]
+[e :U 340 ]
+[e :U 338 ]
+[e :U 336 ]
+"227
+[; ;Calculator.c: 227:         }
+}
+[e :U 334 ]
+[e :U 331 ]
+[e :U 325 ]
+"228
+[; ;Calculator.c: 228:     }
+}
+[e ++ _l_counter -> -> 1 `i `uc ]
+[e :U 323 ]
+[e $ != -> *U + _postfix * -> _l_counter `ux -> -> # *U _postfix `ui `ux `ui -> 0 `ui 320  ]
+[e :U 321 ]
+}
+"230
+[; ;Calculator.c: 230:     if (!empty_stack_float(&stack_evaulate)) {
+[e $ ! ! != -> ( _empty_stack_float (1 &U _stack_evaulate `i -> 0 `i 369  ]
+{
+"231
+[; ;Calculator.c: 231:         pop_stack_float(&stack_evaulate, &eval_result);
+[e ( _pop_stack_float (2 , &U _stack_evaulate &U _eval_result ]
+"232
+[; ;Calculator.c: 232:     }
+}
+[e :U 369 ]
+"234
+[; ;Calculator.c: 234:     *result = eval_result;
+[e = *U _result _eval_result ]
+"235
+[; ;Calculator.c: 235: }
+[e :UE 319 ]
+}
+"238
+[; ;Calculator.c: 238: void Check_Balanced (uint8 *infix, sint8 *flag){
+[v _Check_Balanced `(v ~T0 @X0 1 ef2`*uc`*c ]
+{
+[e :U _Check_Balanced ]
+[v _infix `*uc ~T0 @X0 1 r1 ]
+[v _flag `*c ~T0 @X0 1 r2 ]
+[f ]
+"239
+[; ;Calculator.c: 239:     uint8 l_counter = 0;
+[v _l_counter `uc ~T0 @X0 1 a ]
+[e = _l_counter -> -> 0 `i `uc ]
+"240
+[; ;Calculator.c: 240:     sint8 value = 0;
+[v _value `c ~T0 @X0 1 a ]
+[e = _value -> -> 0 `i `c ]
+"242
+[; ;Calculator.c: 242:     for(l_counter = 0 ; infix[l_counter] != '\0' ; l_counter++){
+{
+[e = _l_counter -> -> 0 `i `uc ]
+[e $U 374  ]
+[e :U 371 ]
+{
+"243
+[; ;Calculator.c: 243:         if('(' == infix[l_counter]){
+[e $ ! == -> 40 `ui -> *U + _infix * -> _l_counter `ux -> -> # *U _infix `ui `ux `ui 375  ]
+{
+"244
+[; ;Calculator.c: 244:             push_stack_char(&stack_balanced , &infix[l_counter]);
+[e ( _push_stack_char (2 , &U _stack_balanced -> &U *U + _infix * -> _l_counter `ux -> -> # *U _infix `ui `ux `c ]
+"245
+[; ;Calculator.c: 245:         }
+}
+[e $U 376  ]
+"246
+[; ;Calculator.c: 246:         else if(')' == infix[l_counter]){
+[e :U 375 ]
+[e $ ! == -> 41 `ui -> *U + _infix * -> _l_counter `ux -> -> # *U _infix `ui `ux `ui 377  ]
+{
+"247
+[; ;Calculator.c: 247:             if(empty_stack_char(&stack_balanced)){
+[e $ ! != -> ( _empty_stack_char (1 &U _stack_balanced `i -> 0 `i 378  ]
+{
+"248
+[; ;Calculator.c: 248:                 *flag = -1;
+[e = *U _flag -> -U -> 1 `i `c ]
+"249
+[; ;Calculator.c: 249:                 return;
+[e $UE 370  ]
+"250
+[; ;Calculator.c: 250:             }
+}
+[e :U 378 ]
+"251
+[; ;Calculator.c: 251:             pop_stack_char(&stack_balanced , &value);
+[e ( _pop_stack_char (2 , &U _stack_balanced &U _value ]
+"252
+[; ;Calculator.c: 252:         }
+}
+[e :U 377 ]
+[e :U 376 ]
+"253
+[; ;Calculator.c: 253:     }
+}
+[e ++ _l_counter -> -> 1 `i `uc ]
+[e :U 374 ]
+[e $ != -> *U + _infix * -> _l_counter `ux -> -> # *U _infix `ui `ux `ui -> 0 `ui 371  ]
+[e :U 372 ]
+}
+"254
+[; ;Calculator.c: 254:     if (!empty_stack_char(&stack_balanced)) {
+[e $ ! ! != -> ( _empty_stack_char (1 &U _stack_balanced `i -> 0 `i 379  ]
+{
+"255
+[; ;Calculator.c: 255:         *flag = -1;
+[e = *U _flag -> -U -> 1 `i `c ]
+"256
+[; ;Calculator.c: 256:     } else {
+}
+[e $U 380  ]
+[e :U 379 ]
+{
+"257
+[; ;Calculator.c: 257:         *flag = 0;
+[e = *U _flag -> -> 0 `i `c ]
+"258
+[; ;Calculator.c: 258:     }
+}
+[e :U 380 ]
+"260
+[; ;Calculator.c: 260: }
+[e :UE 370 ]
+}
