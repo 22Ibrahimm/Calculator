@@ -4,8 +4,13 @@ Embedded project using PIC18F4620
 
 # features 
 . The project simulates a scientific calculator using a PIC18F4620 microcontroller.
+
 . Two keypads are connected: one for basic arithmetic and one for scientific functions.
+
 . An LCD module displays calculations and results like 40*sin(30)/tan(45).
+
 . Keypads and LCD are wired to the microcontroller for input and output operations.
+
 . The Proteus simulation is active, and the design is functioning as expected.
+
 
